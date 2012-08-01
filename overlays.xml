@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<layman>
+        <overlay type="git" name="xtao" src="git://github.com/xtao/overlay.git" contact="xutao881001@gmail.com">
+            <link>https://github.com/xtao/overlay</link>
+            <description>
+                xtao's gentoo overlay
+            </description>
+        </overlay>
+</layman>

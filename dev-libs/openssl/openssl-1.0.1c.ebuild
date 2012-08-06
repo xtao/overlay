@@ -222,8 +222,8 @@ pkg_preinst() {
 }
 
 pkg_postinst() {
-        ebegin "Running 'c_rehash ${ROOT%/}${SSL_CNF_DIR}/certs/' to rebuild hashes #333069"
-        c_rehash "${ROOT%/}${SSL_CNF_DIR}/certs" >/dev/null
+        ebegin "Running 'c_rehash ${EROOT%/}${SSL_CNF_DIR}/certs/' to rebuild hashes #333069"
+        c_rehash "${EROOT%/}${SSL_CNF_DIR}/certs" >/dev/null
         eend $?
 
         has_version ${CATEGORY}/${PN}:0.9.8 && return 0

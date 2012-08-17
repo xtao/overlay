@@ -39,7 +39,7 @@
  libastyle.so:  $(OBJs)
  	@ mkdir -p $(bindir)
 -	$(CXX) -shared $(LDFLAGSr) -o $(bindir)/$@ $^
-+	$(CXX) -dynamiclib $(LDFLAGSr) -o $(bindir)/libastyle.0.0.0.dynlib $^
++	$(CXX) -dynamiclib -install_name libastyle.0.0.0.dynlib $(LDFLAGSr) -o $(bindir)/libastyle.0.0.0.dynlib $^
  	@ echo
  
  shareddebug:  libastyled.so
@@ -48,7 +48,7 @@
  libastylej.so:  $(OBJsj)
  	@ mkdir -p $(bindir)
 -	$(CXX) -shared $(LDFLAGSr) -o $(bindir)/$@ $^
-+	$(CXX) -shared -dynamiclib $(LDFLAGSr) -o $(bindir)/libastylej.0.0.0.dynlib $^
++	$(CXX) -shared -dynamiclib -install_name libastylej.0.0.0.dyblib $(LDFLAGSr) -o $(bindir)/libastylej.0.0.0.dynlib $^
  	@ echo
  
  javadebug:  libastylejd.so

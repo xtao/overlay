@@ -33,7 +33,8 @@ src_prepare() {
 	sed	-e "s:^\(JAVAINCS\s*\)=.*$:\1= $(java-pkg_get-jni-cflags):" \
 		-e "s:ar crs:$(tc-getAR) crs:" \
 		-e "s:\.so:.dynlib:" \
-		-e "s:-dynamiclib:-dynamiclib -Wl,-search_paths_first -L${EROOT}/usr/lib -L${EROOT}/lib -L${EROOT}/tmp/usr/lib -install_name ${EROOT%/}/usr/$(get_libdir)/lib${PN}.0.dynlib:" \
+		-e "s:-dynamiclib -install_name lib${PN}.0.0.0.dynlib:-dynamiclib -Wl,-search_paths_first -L${EROOT}/usr/lib -L${EROOT}/lib -L${EROOT}/tmp/usr/lib -install_name ${EROOT%/}/usr/$(get_libdir)/lib${PN}.0.dynlib:" \
+		-e "s:-dynamiclib -install_name lib${PN}j.0.0.0.dynlib:-dynamiclib -Wl,-search_paths_first -L${EROOT}/usr/lib -L${EROOT}/lib -L${EROOT}/tmp/usr/lib -install_name ${EROOT%/}/usr/$(get_libdir)/lib${PN}j.0.dynlib:" \
 		-i build/gcc/Makefile || die
 }
 

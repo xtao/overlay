@@ -52,6 +52,7 @@ src_configure() {
 		$(use_enable threads pthread) \
 		--disable-perl \
 		$(use_with X x)
+
 }
 
 src_compile() {
